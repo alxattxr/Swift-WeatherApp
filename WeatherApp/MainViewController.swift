@@ -67,7 +67,7 @@ extension MainViewController {
     func locationManager(_ manager: CLLocationManager) {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.startUpdatingLocation()
-        let locValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
+        guard let locValue: CLLocationCoordinate2D = (manager.location?.coordinate) else { return } //Not best way to unwrap optional 'empty return' 
         self.coordinate.latitude = (locValue.latitude)
         self.coordinate.longitude = (locValue.longitude)
     }

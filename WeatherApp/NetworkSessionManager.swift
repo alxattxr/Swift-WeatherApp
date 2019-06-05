@@ -22,16 +22,16 @@ class NetworkSessionManager {
     func networkTask(with request: URLRequest, completionHandler completion: @escaping ([String: AnyObject]?, NetworkSessionError?) -> Void) -> URLSessionDataTask {
         let task = session.dataTask(with: request) { data, response, error in
             //convert to HTTP response
-            if let data = data{
+            if let data = data {
                 guard let httpResponse = response as? HTTPURLResponse else {
                     completion(nil, .requestFail)
                     return
                 }
-                if httpResponse.statusCode == 200{
-                    do{
+                if httpResponse.statusCode == 200 {
+                    do {
                         let jSON = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
                         completion(jSON, nil)
-                    }catch{
+                    } catch {
                         completion(nil, .dataConversionFail)
                     }
                 } else {
