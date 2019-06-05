@@ -15,7 +15,7 @@ class NetworkSessionManager {
         self.session = URLSession(configuration: configuration)
     }
     
-    convenience init(){
+    convenience init() {
         self.init(configuration: .default)
     }
     

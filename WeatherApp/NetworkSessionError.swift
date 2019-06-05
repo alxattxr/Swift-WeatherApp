@@ -6,9 +6,7 @@
 //  Copyright © 2017 AADevelopment. All rights reserved.
 //
 
-import Foundation
-
-enum NetworkSessionError{
+enum NetworkSessionError {
     case invalidData
     case requestFail
     case responseUnsuccesful

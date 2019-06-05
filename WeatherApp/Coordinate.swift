@@ -13,8 +13,8 @@ struct Coordinate{
     var longitude: Double
 }
 
-extension Coordinate: CustomStringConvertible{
-    var description: String{
+extension Coordinate: CustomStringConvertible {
+    var description: String {
             return "\(latitude),\(longitude)"
     }
 }

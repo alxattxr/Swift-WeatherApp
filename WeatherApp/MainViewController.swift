@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class MainViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var humidityPercentageLabel: UILabel!
     @IBOutlet weak var precipitationPercentageLabel: UILabel!
@@ -18,6 +18,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var locationStackView: UIStackView!
+    @IBOutlet weak var temperatureStackView: UIStackView!
+    @IBOutlet weak var humidityStackView: UIStackView!
+    @IBOutlet weak var precipitationStackView: UIStackView!
     
     let locationManager = CLLocationManager()
     let client = APIClient()
@@ -27,6 +31,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        //Since we added the AVPreviewLayer to our MainView as a sublayer we need to bring up eveything back over the added sublayer
+        view.layer.addSublayer(locationStackView.layer)
+        view.layer.addSublayer(temperatureStackView.layer)
+        view.layer.addSublayer(humidityStackView.layer)
+        view.layer.addSublayer(precipitationStackView.layer)
+
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
@@ -34,7 +44,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
         }
-    
         
         locationManager(locationManager)
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
@@ -51,13 +60,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
-    
+}
+
+
+extension MainViewController {
     func locationManager(_ manager: CLLocationManager) {
-            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-            locationManager.startUpdatingLocation()
-            let locValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
-            self.coordinate.latitude = (locValue.latitude)
-            self.coordinate.longitude = (locValue.longitude)
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.startUpdatingLocation()
+        let locValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
+        self.coordinate.latitude = (locValue.latitude)
+        self.coordinate.longitude = (locValue.longitude)
     }
     
     func getCity(location: CLLocation, completion: @escaping (String) -> Void) {
@@ -70,7 +82,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func displayWeather( with viewModel: CurrentWeatherViewModel){
+    func displayWeather(with viewModel: CurrentWeatherViewModel) {
         self.humidityPercentageLabel.text = viewModel.humidity
         self.precipitationPercentageLabel.text = viewModel.rainChance
         self.tempLabel.text = viewModel.temperature
@@ -78,4 +90,3 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.weatherIcon.image = viewModel.icon
     }
 }
-

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//Formats our data
 struct CurrentWeatherViewModel {
     let temperature: String
     let humidity: String

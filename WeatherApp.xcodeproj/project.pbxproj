@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B7E02091FBB66F000995AC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E02081FBB66F000995AC4 /* AppDelegate.swift */; };
-		4B7E020B1FBB66F000995AC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E020A1FBB66F000995AC4 /* ViewController.swift */; };
+		4B7E020B1FBB66F000995AC4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E020A1FBB66F000995AC4 /* MainViewController.swift */; };
 		4B7E020E1FBB66F000995AC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7E020C1FBB66F000995AC4 /* Main.storyboard */; };
 		4B7E02101FBB66F000995AC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B7E020F1FBB66F000995AC4 /* Assets.xcassets */; };
 		4B7E02131FBB66F000995AC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7E02111FBB66F000995AC4 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,9 @@
 		4B7E02461FBCBB5E00995AC4 /* NetworkSessionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E02451FBCBB5E00995AC4 /* NetworkSessionError.swift */; };
 		4B7E02481FBCC27200995AC4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E02471FBCC27200995AC4 /* APIClient.swift */; };
 		4B7E024A1FBCC3AF00995AC4 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E02491FBCC3AF00995AC4 /* Coordinate.swift */; };
+		4BDB388C22A7788900A1E7BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB388B22A7788900A1E7BB /* MainView.swift */; };
+		4BDB388E22A7D2C900A1E7BB /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB388D22A7D2C900A1E7BB /* Notification.swift */; };
+		4BDB389022A7D34900A1E7BB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDB388F22A7D34900A1E7BB /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +47,7 @@
 /* Begin PBXFileReference section */
 		4B7E02051FBB66F000995AC4 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7E02081FBB66F000995AC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B7E020A1FBB66F000995AC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4B7E020A1FBB66F000995AC4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4B7E020D1FBB66F000995AC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B7E020F1FBB66F000995AC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B7E02121FBB66F000995AC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +66,9 @@
 		4B7E02451FBCBB5E00995AC4 /* NetworkSessionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionError.swift; sourceTree = "<group>"; };
 		4B7E02471FBCC27200995AC4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		4B7E02491FBCC3AF00995AC4 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		4BDB388B22A7788900A1E7BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4BDB388D22A7D2C900A1E7BB /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		4BDB388F22A7D34900A1E7BB /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +121,18 @@
 		4B7E02071FBB66F000995AC4 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				4B7E02081FBB66F000995AC4 /* AppDelegate.swift */,
 				4B7E02361FBB6B0300995AC4 /* CurrentWeather.swift */,
+				4B7E02491FBCC3AF00995AC4 /* Coordinate.swift */,
+				4BDB388D22A7D2C900A1E7BB /* Notification.swift */,
+				4B7E02081FBB66F000995AC4 /* AppDelegate.swift */,
+				4BDB388F22A7D34900A1E7BB /* NotificationManager.swift */,
 				4B7E023A1FBB75FA00995AC4 /* CurrentWeatherViewModel.swift */,
 				4B7E02381FBB6C9400995AC4 /* WeatherIcon.swift */,
 				4B7E02451FBCBB5E00995AC4 /* NetworkSessionError.swift */,
 				4B7E02431FBCB6B400995AC4 /* NetworkSessionManager.swift */,
 				4B7E02471FBCC27200995AC4 /* APIClient.swift */,
-				4B7E02491FBCC3AF00995AC4 /* Coordinate.swift */,
-				4B7E020A1FBB66F000995AC4 /* ViewController.swift */,
+				4BDB388B22A7788900A1E7BB /* MainView.swift */,
+				4B7E020A1FBB66F000995AC4 /* MainViewController.swift */,
 				4B7E020C1FBB66F000995AC4 /* Main.storyboard */,
 				4B7E020F1FBB66F000995AC4 /* Assets.xcassets */,
 				4B7E02111FBB66F000995AC4 /* LaunchScreen.storyboard */,
@@ -295,13 +304,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B7E020B1FBB66F000995AC4 /* ViewController.swift in Sources */,
+				4B7E020B1FBB66F000995AC4 /* MainViewController.swift in Sources */,
 				4B7E02391FBB6C9400995AC4 /* WeatherIcon.swift in Sources */,
 				4B7E023B1FBB75FA00995AC4 /* CurrentWeatherViewModel.swift in Sources */,
+				4BDB388C22A7788900A1E7BB /* MainView.swift in Sources */,
 				4B7E02441FBCB6B400995AC4 /* NetworkSessionManager.swift in Sources */,
 				4B7E02371FBB6B0300995AC4 /* CurrentWeather.swift in Sources */,
+				4BDB389022A7D34900A1E7BB /* NotificationManager.swift in Sources */,
 				4B7E024A1FBCC3AF00995AC4 /* Coordinate.swift in Sources */,
 				4B7E02091FBB66F000995AC4 /* AppDelegate.swift in Sources */,
+				4BDB388E22A7D2C900A1E7BB /* Notification.swift in Sources */,
 				4B7E02481FBCC27200995AC4 /* APIClient.swift in Sources */,
 				4B7E02461FBCBB5E00995AC4 /* NetworkSessionError.swift in Sources */,
 			);

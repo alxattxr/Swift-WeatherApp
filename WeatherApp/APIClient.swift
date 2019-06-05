@@ -8,12 +8,12 @@
 
 import Foundation
 
-class APIClient{
+class APIClient {
     let baseUrl = URL(string: "https://api.darksky.net/forecast/cdf97ff3250d724c07f19f03ac3eab0e/")
     
     let downloader = NetworkSessionManager()
     
-    func getCurrrentWeather(at coordinate: Coordinate, completionHandler completion: @escaping (CurrentWeather?, NetworkSessionError?) -> Void){
+    func getCurrrentWeather(at coordinate: Coordinate, completionHandler completion: @escaping (CurrentWeather?, NetworkSessionError?) -> Void) {
         guard let url = URL(string: coordinate.description, relativeTo: baseUrl) else {
             completion(nil, .invalidURL)
             return
@@ -36,7 +36,6 @@ class APIClient{
                 completion(currentWeather, nil)
             }
         }
-        
         task.resume()
     }
 }

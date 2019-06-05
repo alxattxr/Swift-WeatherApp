@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CurrentWeather{
+struct CurrentWeather {
     let temperature: Double
     let humidity: Double
     let rainChance: Double
@@ -16,8 +16,8 @@ struct CurrentWeather{
     let icon: String //API Icons property return as string
 }
 
-extension CurrentWeather{
-    struct apiKey{
+extension CurrentWeather {
+    struct apiKey {
         static let temperature = "temperature"
         static let humidity = "humidity"
         static let rainChance = "precipProbability"
@@ -25,7 +25,8 @@ extension CurrentWeather{
         static let summary = "summary"
         static let icon = "icon"
     }
-    init?(json: [String:AnyObject]){
+    
+    init?(json: [String:AnyObject]) {
         guard let tempValue = json[apiKey.temperature] as? Double,
         let humValue = json[apiKey.humidity] as? Double,
         let rainValue = json[apiKey.rainChance] as? Double,
@@ -33,6 +34,7 @@ extension CurrentWeather{
         let iconString = json[apiKey.icon] as? String else {
             return nil // Since if we are missing a value don't want to return anything
         }
+        
         self.temperature = tempValue
         self.humidity = humValue
         self.rainChance = rainValue

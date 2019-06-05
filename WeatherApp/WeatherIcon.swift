@@ -22,7 +22,7 @@ enum WeatherIcon: String {
     case partlyCloudyNight
     case `default`
     
-    init (iconStr: String){
+    init (iconStr: String) {
         switch iconStr {
         case "clear-day": self = .clearDay
         case "clear-night": self = .clearNight
@@ -39,7 +39,7 @@ enum WeatherIcon: String {
     }
 }
 
-extension WeatherIcon{
+extension WeatherIcon {
     var image: UIImage{
         switch self{
         case .clearDay: return #imageLiteral(resourceName: "clear-day")
